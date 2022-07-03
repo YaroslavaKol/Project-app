@@ -1,0 +1,156 @@
+body {
+  /*  background-image: url("../media/Porto.jpg");
+  background-size: auto 100%;
+  background-color: rgba(0, 0, 0, 0.3);*/
+}
+h4 {
+  font-size: 18px;
+  text-align: center;
+}
+
+ul {
+  width: 100%;
+}
+li {
+  /*position: relative;*/
+  display: inline-block;
+  color: rgb(56, 108, 143);
+  text-decoration: underline;
+}
+li.nearest-city {
+  text-decoration: none;
+  color: darkgray;
+}
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  margin: 0 auto;
+  background-image: url("../media/Porto.jpg");
+  background-position: center;
+  background-size: 600px auto;
+  opacity: 0.7;
+  width: 600px;
+  z-index: -1;
+  max-height: 650px;
+}
+.container-total {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+}
+.form-control {
+  margin-left: 10px;
+}
+#search-button {
+  background-color: rgb(56, 108, 143);
+  border: 1px solid rgb(56, 108, 143);
+}
+
+#current-button {
+  background-color: rgb(193, 117, 50);
+  border: 1px solid rgb(193, 117, 50);
+}
+
+.another-city {
+  width: 100%;
+}
+.g-6 {
+  text-align: center;
+}
+.current-city,
+.col,
+.advice,
+.for-something {
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 50%;
+}
+.current-city {
+  height: 300px;
+}
+.container {
+  width: 100%;
+  margin: 30px 0;
+  padding: auto;
+}
+.col {
+  width: 19%;
+  margin: auto 2px;
+}
+.fa-cloud-bolt {
+  font-size: 60px;
+  color: rgb(56, 108, 143);
+  position: relative;
+  left: 35%;
+  top: -100px;
+}
+.date-city,
+#current-date {
+  background-color: rgba(168, 201, 216, 0.75);
+  width: 80px;
+  font-size: 28px;
+  position: relative;
+  /* right: 10px;*/
+  left: 210px;
+  top: -45px;
+  text-align: center;
+  border-radius: 10px;
+}
+#current-date {
+  background-color: transparent;
+  font-size: 20px;
+  top: 120px;
+  left: 200px;
+  text-decoration: underline;
+}
+.temperature-city {
+  position: relative;
+  left: 29%;
+  top: -95px;
+  font-size: 38px;
+}
+#celcius-link,
+#fahrenheit-link {
+  position: relative;
+  top: -10px;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+}
+.temp-unit {
+  position: relative;
+  top: -4px;
+}
+.advice,
+.for-something {
+  position: relative;
+  left: 67%;
+  top: -265px;
+  width: 30%;
+}
+.current-city,
+h1 .current-city {
+  margin-left: 10px;
+}
+.for-something {
+  margin-top: 15px;
+  height: 135px;
+}
+.container {
+  margin-top: -245px;
+}
+.main {
+  color: rgb(56, 108, 143);
+  margin-left: 35px;
+}
+.conditions-city {
+  padding-left: 10px;
+  margin-top: -55px;
+}
