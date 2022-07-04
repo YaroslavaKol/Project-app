@@ -96,7 +96,7 @@ if (today < 10) {
 }
 
 function todayDate() {
-  changeDate.innerHTML = `${month} ${today}`;
+  changeDate.innerHTML = `${month}, ${today}`;
 }
 function todayDay() {
   changeDay.innerHTML = `${day}`;
