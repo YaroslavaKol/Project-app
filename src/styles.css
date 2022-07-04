@@ -58,6 +58,7 @@ li.nearest-city {
 .current-city {
   max-height: 280px;
   margin-left: 10px;
+  width: 60%;
 }
 
 .container-total {
@@ -93,7 +94,6 @@ li.nearest-city {
   border: 1px solid darkgray;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.8);
-  width: 50%;
 }
 
 .container {
@@ -123,9 +123,9 @@ li.nearest-city {
   font-size: 48px;
 }
 .today-temperature {
-  position: fixed;
-  left: 200px;
-  top: 180px;
+  position: relative;
+  left: -35px;
+  top: -50px;
 }
 #celcius-link,
 #fahrenheit-link {
@@ -181,5 +181,5 @@ h1#current-city {
   text-align: center;
   font-size: 16px;
   padding-top: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
