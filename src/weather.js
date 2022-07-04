@@ -75,18 +75,18 @@ if (minutes < 10) {
 }
 
 let months = [
-  "Jan",
-  "Feb",
+  "January",
+  "February",
   "March",
-  "Apr",
+  "April",
   "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 let month = months[currentDate.getMonth()];
 
