@@ -10,6 +10,7 @@ h4 {
 
 ul {
   width: 100%;
+  max-width: 580px;
 }
 li {
   /*position: relative;*/
@@ -38,23 +39,25 @@ li.nearest-city {
   opacity: 0.7;
   width: 600px;
   z-index: -1;
-  max-height: 650px;
+  max-height: 600px;
 }
 
 .today {
+  position: fixed;
   background-color: rgba(168, 201, 216, 0.75);
   width: 110px;
   position: relative;
   /* right: 10px;*/
   left: 180px;
-  top: -45px;
+  top: -28px;
   text-align: center;
   border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
 }
 .current-city {
-  max-height: 280;
+  max-height: 280px;
+  margin-left: 10px;
 }
 
 .container-total {
@@ -76,6 +79,7 @@ li.nearest-city {
 }
 
 .another-city {
+  display: inline-block;
   width: 100%;
 }
 .g-6 {
@@ -88,7 +92,7 @@ li.nearest-city {
 .for-something {
   border: 1px solid darkgray;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.8);
   width: 50%;
 }
 
@@ -111,10 +115,17 @@ li.nearest-city {
 }
 
 .temperature-city {
-  position: relative;
-  left: 29%;
-  top: -85px;
-  font-size: 38px;
+  /*left: 0;
+  top: 10px;
+  
+  right: 0;*/
+  text-align: center;
+  font-size: 48px;
+}
+.today-temperature {
+  position: fixed;
+  left: 200px;
+  top: 180px;
 }
 #celcius-link,
 #fahrenheit-link {
@@ -138,19 +149,22 @@ li.nearest-city {
 .advice,
 .for-something {
   position: relative;
-  left: 57%;
-  top: -265px;
-  width: 40%;
+  left: 67%;
+  top: -180px;
+  width: 30%;
 }
 
 h1#current-city {
   margin-left: 10px;
-  padding-left: 20px;
+  padding-left: 10px;
+  text-decoration: underline;
+  font-size: 25px;
 }
 .for-something {
   margin-top: 15px;
-  height: 135px;
+  height: 90px;
   padding: 10px 10px;
+  width: 30%;
 }
 
 .main {

@@ -288,6 +288,12 @@ function showTemperature(response) {
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
+  let skyDescription = document.querySelector("#ski-description");
+  skyDescription.innerHTML = `${response.data.weather[0].description}`;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.main.humidity}`;
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
 }
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
@@ -303,3 +309,8 @@ function changeGeolocation(event) {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", changeGeolocation);
+
+function defaultLocation() {
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+defaultLocation();
