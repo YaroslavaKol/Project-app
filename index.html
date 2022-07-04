@@ -60,8 +60,9 @@
       </div>
       <div class="current-city">
         <h1 id="current-city">Porto</h1>
-        <h2 class="date-city">18.06</h2>
-        <h2 id="current-date">Tuesday 15:03</h2>
+        <h2 id="current-day">Tuesday</h2>
+        <h2 id="date-city">18.06</h2>
+        <h2 id="current-time">15:03</h2>
 
         <i class="fa-solid fa-cloud-bolt"></i>
         <div>
@@ -74,10 +75,7 @@
           </h3>
         </div>
 
-        <p class="conditions-city">
-          <i class="fa-solid fa-wind"></i> Wind: 13 km/h <br />
-          <i class="fa-solid fa-umbrella"></i> Precipitation: 85%
-        </p>
+        <div class="conditions-city"></div>
       </div>
 
       <div class="advice">
@@ -86,7 +84,14 @@
           Don't forget to bring an umbrella, it's going to rain today
         </p>
       </div>
-      <div class="for-something"></div>
+      <div class="for-something conditions-city">
+        <i class="fa-solid fa-rainbow"></i>
+        <span id="ski-description"> Clear sky</span><br />
+        <i class="fa-solid fa-umbrella"></i> Humidity:
+        <span id="humidity"></span>%<br />
+        <i class="fa-solid fa-wind"></i> Wind: <span id="wind-speed"></span>km/h
+        <br />
+      </div>
 
       <div class="container">
         <div class="row align-items-start">

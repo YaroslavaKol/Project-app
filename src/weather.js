@@ -52,7 +52,9 @@ if (weather[forecast] !== undefined) {
 //сcurrent date and time
 
 let currentDate = new Date();
-let changeText = document.querySelector("#current-date");
+let changeTime = document.querySelector("#current-time");
+let changeDay = document.querySelector("#current-day");
+let changeDate = document.querySelector("#date-city");
 let days = [
   "Sunday",
   "Monday",
@@ -72,10 +74,39 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-function changeData() {
-  changeText.innerHTML = `${day} ${hours}:${minutes}`;
+let months = [
+  "Jan",
+  "Feb",
+  "March",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+let month = months[currentDate.getMonth()];
+
+let today = currentDate.getDate();
+if (today < 10) {
+  today = `0${today}`;
 }
-changeData();
+
+function todayDate() {
+  changeDate.innerHTML = `${month} ${today}`;
+}
+function todayDay() {
+  changeDay.innerHTML = `${day}`;
+}
+function todayTime() {
+  changeTime.innerHTML = `${hours}:${minutes}`;
+}
+todayTime();
+todayDay();
+todayDate();
 
 //change the name of city
 
@@ -238,6 +269,12 @@ function changeForecastCity(response) {
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
+  let skyDescription = document.querySelector("#ski-description");
+  skyDescription.innerHTML = `${response.data.weather[0].description}`;
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `${response.data.main.humidity}`;
+  let windSpeed = document.querySelector("#wind-speed");
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
 }
 
 let form = document.querySelector(".form");
