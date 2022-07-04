@@ -16,10 +16,11 @@ li {
   display: inline-block;
   color: rgb(56, 108, 143);
   text-decoration: underline;
+  padding: 0 5px;
 }
 li.nearest-city {
   text-decoration: none;
-  color: darkgray;
+  color: rgb(132, 131, 131);
 }
 .background {
   position: absolute;
@@ -75,6 +76,7 @@ li.nearest-city {
 }
 .current-city {
   height: 300px;
+  margin-left: 10px;
 }
 .container {
   width: 100%;
@@ -105,16 +107,17 @@ li.nearest-city {
   border-radius: 10px;
 }
 #current-date {
-  background-color: transparent;
   font-size: 20px;
   top: 120px;
-  left: 200px;
-  text-decoration: underline;
+  left: 190px;
+  text-decoration: none;
+  width: 100px;
+  padding: 5px;
 }
 .temperature-city {
   position: relative;
   left: 29%;
-  top: -95px;
+  top: -85px;
   font-size: 38px;
 }
 #celcius-link,
@@ -138,9 +141,10 @@ li.nearest-city {
   top: -265px;
   width: 30%;
 }
-.current-city,
-h1 .current-city {
+
+h1#current-city {
   margin-left: 10px;
+  padding-left: 20px;
 }
 .for-something {
   margin-top: 15px;
