@@ -138,7 +138,7 @@ li.nearest-city {
   text-decoration: none;
 }
 
-#ski-description {
+#ski-description:first-letter {
   text-transform: capitalize;
 }
 
