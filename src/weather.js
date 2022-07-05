@@ -52,10 +52,10 @@ if (weather[forecast] !== undefined) {
 //сcurrent date and time
 
 let currentDate = new Date();
-let changeTime = document.querySelector("#current-time");
-let changeDay = document.querySelector("#current-day");
+/*let changeTime = document.querySelector("#current-time");
+let changeDay = document.querySelector("#current-day");*/
 let changeDate = document.querySelector("#date-city");
-let days = [
+/*let days = [
   "Sunday",
   "Monday",
   "Tuesday",
@@ -72,7 +72,7 @@ if (hours < 10) {
 let minutes = currentDate.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
-}
+}*/
 
 let months = [
   "January",
@@ -98,14 +98,14 @@ if (today < 10) {
 function todayDate() {
   changeDate.innerHTML = `${month}, ${today}`;
 }
-function todayDay() {
+/*function todayDay() {
   changeDay.innerHTML = `${day}`;
 }
 function todayTime() {
   changeTime.innerHTML = `${hours}:${minutes}`;
 }
 todayTime();
-todayDay();
+todayDay();*/
 todayDate();
 
 //change the name of city
@@ -253,6 +253,40 @@ function showLocation(position) {
 
 navigator.geolocation.getCurrentPosition(showLocation);*/
 
+//current time
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp);
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+  return `${month}`;
+}
+
 //change forecast
 function searchCity(event) {
   event.preventDefault();
@@ -275,6 +309,10 @@ function changeForecastCity(response) {
   humidity.innerHTML = `${response.data.main.humidity}`;
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  let hourElement = document.querySelector("#current-time");
+  hourElement.innerHTML = formatHours(response.data.dt * 1000);
+  let dayElement = document.querySelector("#current-day");
+  dayElement.innerHTML = formatDay(response.data.dt * 1000);
 }
 
 let form = document.querySelector(".form");
