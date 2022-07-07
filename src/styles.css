@@ -107,11 +107,11 @@ li.nearest-city {
   margin: auto 2px;
 }
 .fa-cloud-bolt {
-  font-size: 60px;
+  font-size: 100px;
   color: rgb(56, 108, 143);
   position: relative;
   left: 35%;
-  top: -100px;
+  top: -40px;
 }
 
 .temperature-city {
@@ -119,6 +119,7 @@ li.nearest-city {
   top: 10px;
   
   right: 0;*/
+  padding-top: 30px;
   text-align: center;
   font-size: 48px;
 }
@@ -138,7 +139,7 @@ li.nearest-city {
   text-decoration: none;
 }
 
-#ski-description:first-letter {
+span#sky-description:first-letter {
   text-transform: capitalize;
 }
 

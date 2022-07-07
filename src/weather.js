@@ -269,33 +269,22 @@ function formatHours(timestamp) {
 
 function formatDay(timestamp) {
   let date = new Date(timestamp);
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
   ];
-  let month = months[date.getMonth()];
-  return `${month}`;
+  let day = days[date.getDay()];
+
+  return `${day}`;
 }
 
 //change forecast
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#inputPassword2");
-  let city = `${searchInput.value}`;
-  let apiKey = "075f2647bf920b2b68ba9a328b03f57c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(changeForecastCity);
-}
 
 function changeForecastCity(response) {
   let changeCity = document.querySelector("#current-city");
@@ -303,7 +292,7 @@ function changeForecastCity(response) {
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
-  let skyDescription = document.querySelector("#ski-description");
+  let skyDescription = document.querySelector("#sky-description");
   skyDescription.innerHTML = `${response.data.weather[0].description}`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${response.data.main.humidity}`;
@@ -315,6 +304,14 @@ function changeForecastCity(response) {
   dayElement.innerHTML = formatDay(response.data.dt * 1000);
 }
 
+function searchCity(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#inputPassword2");
+  let city = `${searchInput.value}`;
+  let apiKey = "075f2647bf920b2b68ba9a328b03f57c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeForecastCity);
+}
 let form = document.querySelector(".form");
 form.addEventListener("submit", searchCity);
 
@@ -326,7 +323,7 @@ function showTemperature(response) {
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
-  let skyDescription = document.querySelector("#ski-description");
+  let skyDescription = document.querySelector("#sky-description");
   skyDescription.innerHTML = `${response.data.weather[0].description}`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${response.data.main.humidity}`;
