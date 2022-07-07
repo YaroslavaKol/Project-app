@@ -131,6 +131,9 @@ function changeToFahrenheit(event) {
   event.preventDefault();
   /*let changeDegreesNum = changeDegreesStr.innerHTML;
   changeDegreesNum = Number(changeDegreesNum);*/
+  //remove tha active class from the celcium to fahrenheit link
+  celsiusCity.classList.remove("active");
+  fahrenheitCity.classList.add("active");
   let celsiusToFahrenheit = Math.round((temperatureCurrent * 9) / 5 + 32);
   changeDegreesStr.innerHTML = `${celsiusToFahrenheit}`;
 }
@@ -140,6 +143,8 @@ function changeToCelsius(event) {
   changeDegreesNum = Number(changeDegreesNum);
   let fahrenheitToCelsius = Math.round(((changeDegreesNum - 32) * 5) / 9);
   changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;*/
+  celsiusCity.classList.add("active");
+  fahrenheitCity.classList.remove("active");
   let fahrenheitToCelsius = Math.round(temperatureCurrent);
   changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;
 }

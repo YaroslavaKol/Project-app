@@ -48,7 +48,7 @@ li.nearest-city {
   width: 110px;
   position: relative;
   /* right: 10px;*/
-  left: 230px;
+  left: 250px;
   top: -28px;
   text-align: center;
   border-radius: 10px;
@@ -58,7 +58,7 @@ li.nearest-city {
 .current-city {
   max-height: 280px;
   margin-left: 10px;
-  width: 60%;
+  width: 63%;
 }
 
 .container-total {
@@ -131,12 +131,24 @@ li.nearest-city {
 #celcius-link,
 #fahrenheit-link {
   position: relative;
-  top: -10px;
-  font-size: 1.3rem;
+  /*top: -10px;*/
+
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
   text-decoration: none;
+}
+#change-degrees {
+  font-size: 60px;
+}
+
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  color: black;
+  cursor: default;
 }
 
 .sky-capitalize:first-letter {
@@ -145,7 +157,10 @@ li.nearest-city {
 
 .temp-unit {
   position: relative;
-  top: -4px;
+  top: -30px;
+  /*font-size: 12px;*/
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 .advice,
 .for-something {
@@ -158,6 +173,7 @@ li.nearest-city {
 h1#current-city {
   margin-left: 10px;
   padding-left: 10px;
+  padding-top: 10px;
   text-decoration: underline;
   font-size: 25px;
 }
