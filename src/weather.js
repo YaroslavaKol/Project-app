@@ -329,6 +329,10 @@ function showTemperature(response) {
   humidity.innerHTML = `${response.data.main.humidity}`;
   let windSpeed = document.querySelector("#wind-speed");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  let hourElement = document.querySelector("#current-time");
+  hourElement.innerHTML = formatHours(response.data.dt * 1000);
+  let dayElement = document.querySelector("#current-day");
+  dayElement.innerHTML = formatDay(response.data.dt * 1000);
 }
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
