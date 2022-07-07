@@ -302,6 +302,11 @@ function changeForecastCity(response) {
   hourElement.innerHTML = formatHours(response.data.dt * 1000);
   let dayElement = document.querySelector("#current-day");
   dayElement.innerHTML = formatDay(response.data.dt * 1000);
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(event) {
@@ -334,7 +339,10 @@ function showTemperature(response) {
   let dayElement = document.querySelector("#current-day");
   dayElement.innerHTML = formatDay(response.data.dt * 1000);
   let iconElement = document.querySelector("#current-icon");
-  iconElement.innerHTML = `http://openweathermap.org/img/wn/10d@2x.png`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
