@@ -95,15 +95,21 @@ li.nearest-city {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-.container {
-  width: 100%;
-  margin-top: -205px;
-  padding: auto;
+.weather-forecast {
+  width: 95%;
+  margin: -205px auto auto;
+  padding: auto 0;
+  text-align: center;
 }
 
 .col {
-  width: 19%;
+  width: 18%;
   margin: auto 2px;
+}
+
+.col h4 {
+  color: rgb(131, 122, 122);
+  font-size: 16px;
 }
 .current-icon {
   font-size: 100px;
@@ -111,6 +117,9 @@ li.nearest-city {
   position: relative;
   left: 35%;
   top: -100px;
+}
+.future-temperature {
+  font-size: 13px;
 }
 
 .temperature-city {
@@ -183,9 +192,9 @@ h1#current-city {
   width: 30%;
 }
 
-.main {
+.forecast-icon {
   color: rgb(56, 108, 143);
-  margin-left: 35px;
+  margin-left: 40%;
 }
 /*.conditions-city {
   margin-top: -80px;
