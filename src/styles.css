@@ -108,7 +108,8 @@ li.nearest-city {
 }
 
 .col h4 {
-  color: rgb(131, 122, 122);
+  color: black;
+  opacity: 0.6;
   font-size: 16px;
 }
 .current-icon {
@@ -119,9 +120,11 @@ li.nearest-city {
   top: -100px;
 }
 .future-temperature {
-  font-size: 13px;
+  font-size: 14px;
 }
-
+.future-temperature-min {
+  opacity: 0.6;
+}
 .temperature-city {
   /*left: 0;
   top: 10px;
@@ -194,7 +197,9 @@ h1#current-city {
 
 .forecast-icon {
   color: rgb(56, 108, 143);
-  margin-left: 40%;
+  display: block;
+  margin: 0 auto;
+  /*margin-left: 30%;*/
 }
 /*.conditions-city {
   margin-top: -80px;
