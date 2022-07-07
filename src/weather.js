@@ -136,9 +136,11 @@ function changeToFahrenheit(event) {
 }
 function changeToCelsius(event) {
   event.preventDefault();
-  let changeDegreesNum = changeDegreesStr.innerHTML;
+  /* let changeDegreesNum = changeDegreesStr.innerHTML;
   changeDegreesNum = Number(changeDegreesNum);
   let fahrenheitToCelsius = Math.round(((changeDegreesNum - 32) * 5) / 9);
+  changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;*/
+  let fahrenheitToCelsius = temperatureCurrent;
   changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;
 }
 fahrenheitCity.addEventListener("click", changeToFahrenheit);
