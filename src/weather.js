@@ -333,6 +333,8 @@ function showTemperature(response) {
   hourElement.innerHTML = formatHours(response.data.dt * 1000);
   let dayElement = document.querySelector("#current-day");
   dayElement.innerHTML = formatDay(response.data.dt * 1000);
+  let iconElement = document.querySelector("#current-icon");
+  iconElement.innerHTML = `http://openweathermap.org/img/wn/10d@2x.png`;
 }
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
