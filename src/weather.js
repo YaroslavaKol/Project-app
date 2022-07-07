@@ -140,7 +140,7 @@ function changeToCelsius(event) {
   changeDegreesNum = Number(changeDegreesNum);
   let fahrenheitToCelsius = Math.round(((changeDegreesNum - 32) * 5) / 9);
   changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;*/
-  let fahrenheitToCelsius = temperatureCurrent;
+  let fahrenheitToCelsius = Math.round(temperatureCurrent);
   changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;
 }
 fahrenheitCity.addEventListener("click", changeToFahrenheit);
