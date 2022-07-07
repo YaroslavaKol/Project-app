@@ -129,9 +129,9 @@ let changeDegreesStr = document.querySelector("#change-degrees");
 
 function changeToFahrenheit(event) {
   event.preventDefault();
-  let changeDegreesNum = changeDegreesStr.innerHTML;
-  changeDegreesNum = Number(changeDegreesNum);
-  let celsiusToFahrenheit = Math.round((changeDegreesNum * 9) / 5 + 32);
+  /*let changeDegreesNum = changeDegreesStr.innerHTML;
+  changeDegreesNum = Number(changeDegreesNum);*/
+  let celsiusToFahrenheit = Math.round((temperatureCurrent * 9) / 5 + 32);
   changeDegreesStr.innerHTML = `${celsiusToFahrenheit}`;
 }
 function changeToCelsius(event) {
@@ -288,7 +288,7 @@ function formatDay(timestamp) {
 
 function changeForecastCity(response) {
   let changeCity = document.querySelector("#current-city");
-  let temperatureCurrent = Math.round(response.data.main.temp);
+  temperatureCurrent = Math.round(response.data.main.temp);
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
@@ -307,6 +307,7 @@ function changeForecastCity(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 
 function searchCity(event) {
@@ -324,7 +325,7 @@ form.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
   let changeCity = document.querySelector("#current-city");
-  let temperatureCurrent = Math.round(response.data.main.temp);
+  temperatureCurrent = Math.round(response.data.main.temp);
   let weatherShoot = document.querySelector("#change-degrees");
   weatherShoot.innerHTML = `${temperatureCurrent}`;
   changeCity.innerHTML = `${response.data.name}`;
@@ -343,6 +344,7 @@ function showTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
@@ -355,6 +357,8 @@ function changeGeolocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showLocation);
 }
+
+let temperatureCurrent = null;
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", changeGeolocation);
