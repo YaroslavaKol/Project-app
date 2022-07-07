@@ -66,9 +66,7 @@ li.nearest-city {
   margin: 0 auto;
   width: 600px;
 }
-.form-control {
-  margin-left: 10px;
-}
+
 #search-button {
   background-color: rgb(56, 108, 143);
   border: 1px solid rgb(56, 108, 143);
@@ -77,6 +75,7 @@ li.nearest-city {
 #current-button {
   background-color: rgb(193, 117, 50);
   border: 1px solid rgb(193, 117, 50);
+  margin-right: 10px;
 }
 
 .another-city {
@@ -85,7 +84,7 @@ li.nearest-city {
 }
 .g-6 {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 10px 5px 10px;
 }
 .current-city,
 .col,
