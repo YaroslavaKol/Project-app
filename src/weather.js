@@ -373,4 +373,4 @@ currentButton.addEventListener("click", changeGeolocation);
 function defaultLocation() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
-defaultLocation();
+defaultLocation("Porto");

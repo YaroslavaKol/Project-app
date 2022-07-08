@@ -87,7 +87,7 @@ li.nearest-city {
   margin: 10px 10px 5px 10px;
 }
 .current-city,
-.col,
+.col-2,
 .advice,
 .for-something {
   border: 1px solid darkgray;
@@ -97,28 +97,28 @@ li.nearest-city {
 
 .weather-forecast {
   width: 95%;
-  margin: -205px auto auto;
+  margin: -195px auto auto;
   padding: auto 0;
   text-align: center;
 }
 
-.col {
+/*.col {
   width: 18%;
   margin: auto 2px;
-}
+}*/
 
-.col h4 {
+.future-date {
   color: black;
   opacity: 0.6;
   font-size: 16px;
 }
-.current-icon {
+/*.current-icon {
   font-size: 100px;
   color: rgb(56, 108, 143);
   position: relative;
   left: 35%;
   top: -100px;
-}
+}*/
 .future-temperature {
   font-size: 14px;
 }
