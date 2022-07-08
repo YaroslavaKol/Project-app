@@ -1,28 +1,21 @@
 body {
-  /*  background-image: url("../media/Porto.jpg");
-  background-size: auto 100%;*/
   background-color: rgba(193, 117, 50, 0.3);
 }
+
+h1#current-city {
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  text-decoration: underline;
+  font-size: 28px;
+  width: 200px;
+}
+
 h4 {
   font-size: 18px;
   text-align: center;
 }
 
-ul {
-  width: 100%;
-  max-width: 580px;
-}
-li {
-  /*position: relative;*/
-  display: inline-block;
-  color: rgb(56, 108, 143);
-  text-decoration: underline;
-  padding: 0 5px;
-}
-li.nearest-city {
-  text-decoration: none;
-  color: rgb(132, 131, 131);
-}
 .background {
   position: absolute;
   left: 0;
@@ -98,23 +91,12 @@ li.nearest-city {
   text-align: center;
 }
 
-/*.col {
-  width: 18%;
-  margin: auto 2px;
-}*/
-
 .future-date {
   color: black;
   opacity: 0.6;
   font-size: 16px;
 }
-/*.current-icon {
-  font-size: 100px;
-  color: rgb(56, 108, 143);
-  position: relative;
-  left: 35%;
-  top: -100px;
-}*/
+
 .future-temperature {
   font-size: 14px;
 }
@@ -122,10 +104,6 @@ li.nearest-city {
   opacity: 0.6;
 }
 .temperature-city {
-  /*left: 0;
-  top: 10px;
-  
-  right: 0;*/
   padding-top: 30px;
   text-align: center;
   font-size: 48px;
@@ -178,14 +156,6 @@ li.nearest-city {
   text-align: center;
 }
 
-h1#current-city {
-  margin-left: 10px;
-  padding-left: 10px;
-  padding-top: 10px;
-  text-decoration: underline;
-  font-size: 28px;
-  width: 200px;
-}
 .for-something {
   margin-top: 15px;
   height: 90px;
@@ -197,14 +167,8 @@ h1#current-city {
   color: rgb(56, 108, 143);
   display: block;
   margin: 0 auto;
-  /*margin-left: 30%;*/
 }
-/*.conditions-city {
-  margin-top: -80px;
-  margin-left: 10px;
 
-  padding-bottom: 40px;
-}*/
 .link-github {
   display: block;
   margin: 10px auto;

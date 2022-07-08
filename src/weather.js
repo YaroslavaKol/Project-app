@@ -3,24 +3,6 @@
 let currentDate = new Date();
 
 let changeDate = document.querySelector("#date-city");
-/*let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[currentDate.getDay()];
-let hours = currentDate.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = currentDate.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}*/
 
 let months = [
   "January",
@@ -46,41 +28,8 @@ if (today < 10) {
 function todayDate() {
   changeDate.innerHTML = `${month}, ${today}`;
 }
-/*function todayDay() {
-  changeDay.innerHTML = `${day}`;
-}
-function todayTime() {
-  changeTime.innerHTML = `${hours}:${minutes}`;
-}
-todayTime();
-todayDay();*/
+
 todayDate();
-
-//change the temperature
-
-/*let celsiusCity = document.querySelector("#celcius-link");
-let fahrenheitCity = document.querySelector("#fahrenheit-link");
-let changeDegreesStr = document.querySelector("#change-degrees");
-
-function changeToFahrenheit(event) {
-  event.preventDefault();
-
-  //remove tha active class from the celcium to fahrenheit link
-  celsiusCity.classList.remove("active");
-  fahrenheitCity.classList.add("active");
-  let celsiusToFahrenheit = Math.round((temperatureCurrent * 9) / 5 + 32);
-  changeDegreesStr.innerHTML = `${celsiusToFahrenheit}`;
-}
-function changeToCelsius(event) {
-  event.preventDefault();
-
-  celsiusCity.classList.add("active");
-  fahrenheitCity.classList.remove("active");
-  let fahrenheitToCelsius = Math.round(temperatureCurrent);
-  changeDegreesStr.innerHTML = `${fahrenheitToCelsius}`;
-}
-fahrenheitCity.addEventListener("click", changeToFahrenheit);
-celsiusCity.addEventListener("click", changeToCelsius);*/
 
 //array with days of the week
 
@@ -215,6 +164,8 @@ function getCoords(coordinats) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+//function for advice block
+
 function changeAdvice(response) {
   let advice = document.querySelector(`#advice-text`);
   if (response == `rain` || response == `shower rain`) {
@@ -253,6 +204,8 @@ function showTemperature(response) {
   changeAdvice(response.data.weather[0].description);
 }
 
+//position of user
+
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
   let longitude = `${position.coords.longitude}`;
@@ -273,4 +226,4 @@ currentButton.addEventListener("click", changeGeolocation);
 function defaultLocation() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
-defaultLocation("Porto");
+defaultLocation();
