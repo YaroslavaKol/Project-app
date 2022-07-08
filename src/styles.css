@@ -39,7 +39,7 @@ li.nearest-city {
   opacity: 0.7;
   width: 600px;
   z-index: -1;
-  max-height: 530px;
+  max-height: 450px;
 }
 
 .today {
@@ -78,10 +78,6 @@ li.nearest-city {
   margin-right: 10px;
 }
 
-.another-city {
-  display: inline-block;
-  width: 100%;
-}
 .g-6 {
   text-align: center;
   margin: 10px 10px 5px 10px;
@@ -137,18 +133,14 @@ li.nearest-city {
 .today-temperature {
   position: relative;
   left: -35px;
-  top: -110px;
+  top: -165px;
 }
-#celcius-link,
-#fahrenheit-link {
-  position: relative;
-  /*top: -10px;*/
 
-  font-weight: 400;
-  line-height: 1.5;
-  text-align: left;
-  text-decoration: none;
+.current-icon {
+  position: relative;
+  top: -50px;
 }
+
 #change-degrees {
   font-size: 60px;
 }
@@ -181,12 +173,18 @@ li.nearest-city {
   width: 30%;
 }
 
+.advice {
+  height: 110px;
+  text-align: center;
+}
+
 h1#current-city {
   margin-left: 10px;
   padding-left: 10px;
   padding-top: 10px;
   text-decoration: underline;
-  font-size: 25px;
+  font-size: 28px;
+  width: 200px;
 }
 .for-something {
   margin-top: 15px;
@@ -213,5 +211,4 @@ h1#current-city {
   text-align: center;
   font-size: 16px;
   padding-top: 20px;
-  margin-top: 50px;
 }
