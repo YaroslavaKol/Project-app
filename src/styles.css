@@ -39,7 +39,7 @@ li.nearest-city {
   opacity: 0.7;
   width: 600px;
   z-index: -1;
-  max-height: 600px;
+  max-height: 530px;
 }
 
 .today {
@@ -87,7 +87,7 @@ li.nearest-city {
   margin: 10px 10px 5px 10px;
 }
 .current-city,
-.col-2,
+.forecast-unit,
 .advice,
 .for-something {
   border: 1px solid darkgray;

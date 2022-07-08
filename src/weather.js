@@ -260,38 +260,62 @@ function showLocation(position) {
 
 navigator.geolocation.getCurrentPosition(showLocation);*/
 
+//array with days of the week
+
+function formatWeekday(timestamp) {
+  let date = new Date(timestamp * 1000);
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let day = days[date.getDay()];
+
+  return `${day}`;
+}
+
 //copy forecast block
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-          <div class="col-2">
-            <div class="future-date">${day}<br />
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+          <div class="col-2 forecast-unit">
+            <div class="future-date">${formatWeekday(forecastDay.dt)}<br />
               19.06
             </div> <img
-              src="http://openweathermap.org/img/wn/50d@2x.png"
+              src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png"
               class="forecast-icon"
               id="forecast-icon"
               width="42"
             />
             <div class="future-temperature" id="forecast">
-              <span class="future-temperature-min">15°C</span> /
-              <span class="future-temperature-max">22°C</span>
+              <span class="future-temperature-min">${Math.round(
+                forecastDay.temp.min
+              )}°C</span> /
+              <span class="future-temperature-max">${Math.round(
+                forecastDay.temp.max
+              )}°C</span><br />
 
-              <i class="fa-solid fa-wind"></i> 15 km/h <br />
-              <i class="fa-solid fa-umbrella"></i> 95%
+              <i class="fa-solid fa-wind"></i> ${Math.round(
+                forecastDay.wind_speed
+              )} km/h <br />
+              <i class="fa-solid fa-umbrella"></i> ${forecastDay.humidity}%
           </div></div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
 //current time
+
 function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -346,6 +370,8 @@ function changeForecastCity(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+  getCoords(response.data.coord);
 }
 
 function searchCity(event) {
@@ -358,6 +384,14 @@ function searchCity(event) {
 }
 let form = document.querySelector(".form");
 form.addEventListener("submit", searchCity);
+
+//receiving coordinats of the city that user search for
+
+function getCoords(coordinats) {
+  let apiKey = "075f2647bf920b2b68ba9a328b03f57c";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinats.lat}&lon=${coordinats.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //button "Current" geolocation
 
@@ -384,6 +418,7 @@ function showTemperature(response) {
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 }
+
 function showLocation(position) {
   let latitude = `${position.coords.latitude}`;
   let longitude = `${position.coords.longitude}`;
@@ -405,4 +440,3 @@ function defaultLocation() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 defaultLocation("Porto");
-displayForecast();
