@@ -260,6 +260,37 @@ function showLocation(position) {
 
 navigator.geolocation.getCurrentPosition(showLocation);*/
 
+//copy forecast block
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="future-date">${day}<br />
+              19.06
+            </div> <img
+              src="http://openweathermap.org/img/wn/50d@2x.png"
+              class="forecast-icon"
+              id="forecast-icon"
+              width="42"
+            />
+            <div class="future-temperature" id="forecast">
+              <span class="future-temperature-min">15°C</span> /
+              <span class="future-temperature-max">22°C</span>
+
+              <i class="fa-solid fa-wind"></i> 15 km/h <br />
+              <i class="fa-solid fa-umbrella"></i> 95%
+          </div></div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //current time
 function formatHours(timestamp) {
   let date = new Date(timestamp);
@@ -374,3 +405,4 @@ function defaultLocation() {
   navigator.geolocation.getCurrentPosition(showLocation);
 }
 defaultLocation("Porto");
+displayForecast();
